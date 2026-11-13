@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { withBase } from "@/lib/paths";
 
 export default function PromoStrip() {
   return (
@@ -9,7 +10,7 @@ export default function PromoStrip() {
         className="block transition-opacity duration-300 hover:opacity-95"
       >
         <img
-          src="/images/banners/flipkart-credit-card-offer.png"
+          src={withBase("/images/banners/flipkart-credit-card-offer.png")}
           alt="Flipkart Credit Card Discount Banner"
           loading="lazy"
           className="h-auto w-full"

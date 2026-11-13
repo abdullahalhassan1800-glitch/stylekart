@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { withBase } from "@/lib/paths";
 
 export default function TopBanner() {
   return (
@@ -9,7 +10,7 @@ export default function TopBanner() {
         className="block transition-transform duration-300 hover:scale-[1.005]"
       >
         <img
-          src="/images/banners/myntra-sale-60-off.png"
+          src={withBase("/images/banners/myntra-sale-60-off.png")}
           alt="Get 60% Off Myntra Sale"
           className="h-auto w-full"
         />

@@ -1,4 +1,5 @@
 import type { Gender, Group, Product } from "@/lib/types";
+import { withBase } from "@/lib/paths";
 
 type Def = [group: Group, categoryName: string, name: string, brand: string, price: number];
 
@@ -188,7 +189,9 @@ export const products: Product[] = DEFS.map((def, index) => {
     rating: Math.round((3.6 + (h % 13) / 10) * 10) / 10,
     ratingCount: 80 + (h % 8800),
     sizes: sizesFor(group, categoryName),
-    images: [1, 2, 3, 4].map((n) => `/images/products/${id}-${n}.jpg`),
+    images: [1, 2, 3, 4].map((n) =>
+      withBase(`/images/products/${id}-${n}.jpg`),
+    ),
     description: descriptionFor(group, categoryName, brand, color),
     isNewArrival: h % 7 === 0,
   };

@@ -18,6 +18,7 @@ import {
   IconUser,
   IconX,
 } from "@/components/ui/icons";
+import { withBase } from "@/lib/paths";
 
 const OPEN_DELAY = 80;
 const CLOSE_DELAY = 150;
@@ -27,7 +28,7 @@ const STUDIO_EDITORIAL = [
   "/images/products/p13-1.jpg",
   "/images/products/p36-1.jpg",
   "/images/products/p42-1.jpg",
-];
+].map(withBase);
 
 function SearchForm({ className }: { className?: string }) {
   const router = useRouter();
@@ -62,7 +63,7 @@ function Logo() {
   return (
     <Link href="/" aria-label="StyleKart home" className="flex shrink-0 items-center">
       <img
-        src="/images/logo.png"
+        src={withBase("/images/logo.png")}
         alt="StyleKart"
         className="h-9 w-auto object-contain lg:h-10"
       />

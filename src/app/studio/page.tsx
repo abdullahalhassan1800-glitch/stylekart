@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getProduct } from "@/data/products";
+import { withBase } from "@/lib/paths";
 
 export const metadata: Metadata = {
   title: "Studio",
@@ -65,7 +66,7 @@ export default function StudioPage() {
     <div className="mx-auto max-w-[1400px] px-4 py-6 lg:px-8">
       <section className="relative overflow-hidden rounded-lg">
         <img
-          src="/images/banners/b3.jpg"
+          src={withBase("/images/banners/b3.jpg")}
           alt="StyleKart Studio"
           className="h-[280px] w-full object-cover md:h-[380px]"
         />

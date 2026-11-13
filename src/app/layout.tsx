@@ -4,6 +4,7 @@ import "./globals.css";
 import { Providers } from "@/context/providers";
 import Header from "@/components/layout/header";
 import Footer from "@/components/layout/footer";
+import { withBase } from "@/lib/paths";
 
 const figtree = Figtree({
   variable: "--font-figtree",
@@ -38,13 +39,13 @@ export const metadata: Metadata = {
     siteName: "StyleKart",
     type: "website",
     url: "/",
-    images: [{ url: "/images/banners/b1.jpg", width: 1600, height: 620 }],
+    images: [{ url: withBase("/images/banners/b1.jpg"), width: 1600, height: 620 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "StyleKart - Online Shopping for Fashion & Lifestyle",
     description: siteDescription,
-    images: ["/images/banners/b1.jpg"],
+    images: [withBase("/images/banners/b1.jpg")],
   },
 };
 
